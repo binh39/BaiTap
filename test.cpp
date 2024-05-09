@@ -2,24 +2,28 @@
 
 using namespace std;
 
-void f(int* a){
-	cout<<sizeof(a)<<endl;
-}
-
-int counteven(int* a, int n){
-	int dem=0;
-	for(int i=0;i<n;i++){
-		if(a[i]%2==0) dem++;
+struct Node{
+	int value;
+	Node* next;
+	Node (int val, Node* next_){
+		value = val;
+		next = next_;
 	}
-	return dem;
-}
+};
 
+struct Slist{
+	Node* head = nullptr;
+};
 
 int main(){
-	double x = 3/ (double)5;
-int sampleArray[10];
-for (int index = 1; index <= 10; index++)
-    sampleArray[index] = 3*index;
-    char a[3] = "abc";
-}
+	int a[6] = {1, 2, 3};
+	int *b; b = &a[0];
+	for (int i=0; i<3; i++)
+	    switch (i%3) {
+	        case 0: *(b+i) = a[i]; break;
+	        case 1: *(b++) = a[i]; break;
+	        case 2: *(++b) = a[i]++; break;
+	    }
+	for (int i=0; i<3; i++) cout << a[i] << " ";
 
+}
